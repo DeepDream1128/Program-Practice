@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/zby/codetest/ProPractice/Sport/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/Sport.dir/main.cpp.o -c /home/zby/codetest/ProPractice/Sport/main.cpp",
+  "file": "/home/zby/codetest/ProPractice/Sport/main.cpp",
+  "output": "CMakeFiles/Sport.dir/main.cpp.o"
+}
+]

@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/zby/codetest/ProPractice/Parking/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/Parking.dir/main.cpp.o -c /home/zby/codetest/ProPractice/Parking/main.cpp",
+  "file": "/home/zby/codetest/ProPractice/Parking/main.cpp",
+  "output": "CMakeFiles/Parking.dir/main.cpp.o"
+}
+]
