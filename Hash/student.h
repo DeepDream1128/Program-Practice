@@ -1,8 +1,4 @@
-#pragma once
-
 #include <bits/stdc++.h>
-
-
 
 struct Student {
     std::string name;
