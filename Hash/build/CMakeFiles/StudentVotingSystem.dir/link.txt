@@ -1,0 +1,1 @@
+/usr/bin/g++ -g -rdynamic CMakeFiles/StudentVotingSystem.dir/main.cpp.o CMakeFiles/StudentVotingSystem.dir/student.cpp.o -o StudentVotingSystem 

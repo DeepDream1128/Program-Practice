@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/zby/codetest/ProPractice/Hash/build",
+  "command": "/usr/bin/g++  -I/home/zby/codetest/ProPractice/Hash -g -std=gnu++11 -o CMakeFiles/StudentVotingSystem.dir/main.cpp.o -c /home/zby/codetest/ProPractice/Hash/main.cpp",
+  "file": "/home/zby/codetest/ProPractice/Hash/main.cpp",
+  "output": "CMakeFiles/StudentVotingSystem.dir/main.cpp.o"
+},
+{
+  "directory": "/home/zby/codetest/ProPractice/Hash/build",
+  "command": "/usr/bin/g++  -I/home/zby/codetest/ProPractice/Hash -g -std=gnu++11 -o CMakeFiles/StudentVotingSystem.dir/student.cpp.o -c /home/zby/codetest/ProPractice/Hash/student.cpp",
+  "file": "/home/zby/codetest/ProPractice/Hash/student.cpp",
+  "output": "CMakeFiles/StudentVotingSystem.dir/student.cpp.o"
+}
+]
