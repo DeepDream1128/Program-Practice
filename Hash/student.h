@@ -15,6 +15,7 @@ struct Student {
 };
 
 int hashFunction(const std::string& pinyin);
+void readStudentData(const std::string& filename);
 void insertStudent(const Student& student);
 void voteForStudent(const std::string& pinyin);
 void displayStudentInfo(const std::string& pinyin);

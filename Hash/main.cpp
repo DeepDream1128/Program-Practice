@@ -2,8 +2,9 @@
 
 int main() {
   // 初始化评选系统，添加测试用例等
-  // ...
 
+  readStudentData("../student.txt");
+  
   while (true) {
     std::cout << "请选择操作：\n"
                  "1. 提名优秀学生并投票\n"

@@ -10,6 +10,7 @@ int hashFunction(const std::string &pinyin) {
   return sum % (hashTable.size()?hashTable.size():1);
 }
 
+
 void insertStudent(const Student &student) {
   int hashIndex = hashFunction(student.pinyin);
   while (hashTable.find(student.pinyin) != hashTable.end()) {
@@ -31,6 +32,23 @@ void voteForStudent(const std::string &pinyin) {
 
   }
 }
+void readStudentData(const std::string& filename) {
+    std::ifstream inFile(filename);
+    if (!inFile) {
+        std::cerr << "无法打开文件: " << filename << std::endl;
+        return;
+    }
+    std::string name, pinyin, className, outstandingDeeds;
+    int grade, votes;
+    while (inFile >> name >> pinyin >> className >> grade >> outstandingDeeds >> votes) {
+        Student student = {name, pinyin, votes, className, outstandingDeeds};
+        insertStudent(student);
+        voteForStudent(student.pinyin);
+    }
+
+    inFile.close();
+}
+
 
 void displayStudentInfo(const std::string &pinyin) {
   auto it = hashTable.find(pinyin);
