@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/zby/codetest/ProPractice/Maze/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/maze.dir/main.cpp.o -c /home/zby/codetest/ProPractice/Maze/main.cpp",
+  "file": "/home/zby/codetest/ProPractice/Maze/main.cpp",
+  "output": "CMakeFiles/maze.dir/main.cpp.o"
+}
+]
