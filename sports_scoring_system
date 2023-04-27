@@ -1,0 +1,23 @@
+// Sports Scoring System
+digraph {
+	A [label="输入学校数量、男子团体项目数量、女子团体项目数量"]
+	B [label="输入学校名称"]
+	C [label="输入项目名称"]
+	D [label="输入项目成绩"]
+	E [label="按学校编号排序输出"]
+	F [label="按学校总分排序输出"]
+	G [label="按男女团体总分排序输出"]
+	H [label="按学校编号查询学校某个项目的情况"]
+	I [label="按项目编号查询取得前三或前五名的学校"]
+	A -> B
+	B -> C
+	C -> D
+	D -> C
+	D -> E
+	D -> F
+	D -> G
+	H -> B
+	H -> D
+	I -> C
+	I -> D
+}

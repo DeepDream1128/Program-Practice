@@ -10,7 +10,7 @@ const double discountFactor = 0.9;
 const int numEpisodes = 500;
 double epsilon = 0.9;
 const double epsilonDecay = 0.99;
-const int maxStepsPerEpisode = 300;
+const int maxStepsPerEpisode = 3000;
 
 int maze[numRows][numCols] = {{0, 0, 1, 0, 0}, 
                               {1, 0, 1, 1, 0},

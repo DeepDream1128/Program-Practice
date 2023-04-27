@@ -18,7 +18,7 @@ struct School {
 struct Event {
     int id;
     string name;
-    bool top_three = false;
+    int num_rankings; // 新增：用户指定的名次取法
     vector<pair<int, int>> school_scores;
 };
 
@@ -47,17 +47,15 @@ int main() {
         schools[i].id = i + 1;
         cin >> schools[i].name;
     }
-    cout << "请输入项目名称：" << endl;
+    cout << "请输入项目名称和名次取法：" << endl; // 输入部分，让用户指定每个项目的名次取法
     vector<Event> events(m + w);
     for (int i = 0; i < m + w; ++i) {
         events[i].id = i + 1;
-        cin >> events[i].name;
-        events[i].top_three = (i < m) ? false : true;
+        cin >> events[i].name >> events[i].num_rankings; // 获取用户指定的名次取法
     }
 
     for (auto& event : events) {
-        int num_scores = event.top_three ? 3 : 5;
-        for (int i = 0; i < num_scores; ++i) {
+        for (int i = 0; i < event.num_rankings; ++i) { // 根据用户指定的名次取法计算学校得分
             int school_id, score;
             cout<< "请输入项目 " << event.name << " 的第 " << i + 1 << " 名学校编号和得分：" << endl;
             cin >> school_id >> score;
@@ -65,15 +63,14 @@ int main() {
 
             School& school = schools[school_id - 1];
             school.total_score += score;
-            if (event.top_three) {
-                school.female_score += score;
-            } else {
+            if (i < m) {
                 school.male_score += score;
+            } else {
+                school.female_score += score;
             }
             school.event_scores[event.id] = score;
         }
     }
-
     // 输出学校编号排序
     sort(schools.begin(), schools.end(), compare_by_id);
     cout << "按学校编号排序：" << endl;
@@ -117,7 +114,7 @@ int main() {
     cin >> query_event_id2;
     const Event& query_event = events[query_event_id2 - 1];
 
-    cout << "在项目 " << query_event.name << " 中取得前" << (query_event.top_three ? "三" : "五") << "名的学校为：" << endl;
+    cout << "在项目 " << query_event.name << " 中取得前" << query_event.num_rankings << "名的学校有：" << endl;
     for (const auto& school_score : query_event.school_scores) {
         cout << schools[school_score.first - 1].name << " (得分: " << school_score.second << ")" << endl;
     }
