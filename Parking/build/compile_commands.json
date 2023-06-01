@@ -1,8 +1,8 @@
 [
 {
-  "directory": "/home/zby/codetest/ProPractice/Parking/build",
-  "command": "/usr/bin/g++   -g -o CMakeFiles/Parking.dir/main.cpp.o -c /home/zby/codetest/ProPractice/Parking/main.cpp",
-  "file": "/home/zby/codetest/ProPractice/Parking/main.cpp",
+  "directory": "/media/zby/SSD数据盘/Program-Practice/Parking/build",
+  "command": "/usr/bin/g++ -O3 -DNDEBUG -o CMakeFiles/Parking.dir/main.cpp.o -c /media/zby/SSD数据盘/Program-Practice/Parking/main.cpp",
+  "file": "/media/zby/SSD数据盘/Program-Practice/Parking/main.cpp",
   "output": "CMakeFiles/Parking.dir/main.cpp.o"
 }
 ]

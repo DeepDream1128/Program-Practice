@@ -1,8 +1,8 @@
 [
 {
-  "directory": "/home/zby/codetest/ProPractice/Maze/build",
-  "command": "/usr/bin/g++   -g -o CMakeFiles/maze.dir/main.cpp.o -c /home/zby/codetest/ProPractice/Maze/main.cpp",
-  "file": "/home/zby/codetest/ProPractice/Maze/main.cpp",
+  "directory": "/media/zby/SSD数据盘/Program-Practice/Maze/build",
+  "command": "/usr/bin/g++ -O3 -DNDEBUG -o CMakeFiles/maze.dir/main.cpp.o -c /media/zby/SSD数据盘/Program-Practice/Maze/main.cpp",
+  "file": "/media/zby/SSD数据盘/Program-Practice/Maze/main.cpp",
   "output": "CMakeFiles/maze.dir/main.cpp.o"
 }
 ]

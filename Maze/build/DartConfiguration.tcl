@@ -4,14 +4,14 @@
 
 
 # Configuration directories and files
-SourceDirectory: /home/zby/codetest/ProPractice/Maze
-BuildDirectory: /home/zby/codetest/ProPractice/Maze/build
+SourceDirectory: /media/zby/SSD数据盘/Program-Practice/Maze
+BuildDirectory: /media/zby/SSD数据盘/Program-Practice/Maze/build
 
 # Where to place the cost data store
 CostDataFile: 
 
 # Site is something like machine.domain, i.e. pragmatic.crd
-Site: DeepDream
+Site: zby-X570-I-AORUS-PRO-WIFI
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
 BuildName: Linux-g++
@@ -27,8 +27,8 @@ SubmitInactivityTimeout:
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/home/zby/codetest/tmp/cmake-3.26.3-linux-x86_64/bin/cmake" "/home/zby/codetest/ProPractice/Maze"
-MakeCommand: /home/zby/codetest/tmp/cmake-3.26.3-linux-x86_64/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}" -- -i
+ConfigureCommand: "/media/zby/SSD数据盘/miniconda3/envs/myenv/lib/python3.8/site-packages/cmake/data/bin/cmake" "/media/zby/SSD数据盘/Program-Practice/Maze"
+MakeCommand: /media/zby/SSD数据盘/miniconda3/envs/myenv/lib/python3.8/site-packages/cmake/data/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 
 # version control
@@ -76,7 +76,7 @@ CudaSanitizerCommand:
 CudaSanitizerCommandOptions: 
 MemoryCheckType: 
 MemoryCheckSanitizerOptions: 
-MemoryCheckCommand: /usr/bin/cuda-memcheck
+MemoryCheckCommand: /usr/local/cuda-11.1/bin/cuda-memcheck
 MemoryCheckCommandOptions: 
 MemoryCheckSuppressionFile: 
 

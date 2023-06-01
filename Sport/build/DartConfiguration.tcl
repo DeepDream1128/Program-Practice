@@ -4,14 +4,14 @@
 
 
 # Configuration directories and files
-SourceDirectory: /home/zby/codetest/ProPractice/Sport
-BuildDirectory: /home/zby/codetest/ProPractice/Sport/build
+SourceDirectory: /media/zby/SSD数据盘/Program-Practice/Sport
+BuildDirectory: /media/zby/SSD数据盘/Program-Practice/Sport/build
 
 # Where to place the cost data store
 CostDataFile: 
 
 # Site is something like machine.domain, i.e. pragmatic.crd
-Site: DeepDream
+Site: zby-X570-I-AORUS-PRO-WIFI
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
 BuildName: Linux-g++
@@ -27,8 +27,8 @@ SubmitInactivityTimeout:
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/home/zby/codetest/tmp/cmake-3.26.3-linux-x86_64/bin/cmake" "/home/zby/codetest/ProPractice/Sport"
-MakeCommand: /home/zby/codetest/tmp/cmake-3.26.3-linux-x86_64/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}" -- -i
+ConfigureCommand: "/usr/local/bin/cmake" "/media/zby/SSD数据盘/Program-Practice/Sport"
+MakeCommand: /usr/local/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 
 # version control
@@ -76,7 +76,7 @@ CudaSanitizerCommand:
 CudaSanitizerCommandOptions: 
 MemoryCheckType: 
 MemoryCheckSanitizerOptions: 
-MemoryCheckCommand: /usr/bin/cuda-memcheck
+MemoryCheckCommand: MEMORYCHECK_COMMAND-NOTFOUND
 MemoryCheckCommandOptions: 
 MemoryCheckSuppressionFile: 
 

@@ -1,0 +1,6 @@
+*.make
+*.json
+build/
+Maze/build
+*.cmake
+Maze/.cache

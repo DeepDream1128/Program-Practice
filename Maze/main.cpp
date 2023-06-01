@@ -1,35 +1,33 @@
-#include <algorithm>
-#include <cstdlib>
-#include <ctime>
-#include <iostream>
-#include <vector>
-const int numRows = 6;
-const int numCols = 5;
+#include <bits/stdc++.h>
+
 const double learningRate = 0.9;
 const double discountFactor = 0.9;
-const int numEpisodes = 500;
+const int numEpisodes = 5000;
 double epsilon = 0.9;
 const double epsilonDecay = 0.99;
 const int maxStepsPerEpisode = 3000;
 
-int maze[numRows][numCols] = {{0, 0, 1, 0, 0}, 
-                              {1, 0, 1, 1, 0},
-                              {0, 0, 0, 1, 0}, 
-                              {0, 1, 0, 0, 1},
-                              {0, 0, 1, 0, 1}, 
-                              {1, 0, 0, 0, 0}};
+// int maze[numRows][numCols] = {{0, 0, 1, 0, 0}, 
+//                               {1, 0, 1, 1, 0},
+//                               {0, 0, 0, 1, 0}, 
+//                               {0, 1, 0, 0, 1},
+//                               {0, 0, 1, 0, 1}, 
+//                               {1, 0, 0, 0, 0}};
+int numRows = 6;
+int numCols = 5;
+std::vector<std::vector<int>> maze;
 
 int startRow = 0;
 int startCol = 0;
 int endRow = 5;
 int endCol = 4;
 
-// int actions[8][2] = {
-//     {-1, 0}, {1, 0},  {0, -1}, {0, 1}, {-1, -1},
-//     {-1, 1}, {1, -1}, {1, 1}}; // Up, Down, Left, Right, UpLeft, UpRight,
-//                                // DownLeft, DownRight
-int actions[4][2]= {{-1, 0}, {1, 0}, {0, -1}, {0, 1}}; // Up, Down, Left, Right
-int action_cnt = 4;
+int actions[8][2] = {
+    {-1, 0}, {1, 0},  {0, -1}, {0, 1}, {-1, -1},
+    {-1, 1}, {1, -1}, {1, 1}}; // Up, Down, Left, Right, UpLeft, UpRight,
+                               // DownLeft, DownRight
+// int actions[4][2]= {{-1, 0}, {1, 0}, {0, -1}, {0, 1}}; // Up, Down, Left, Right
+int action_cnt = 8;
 
 bool isValidMove(int row, int col) {
   if (row >= 0 && row < numRows && col >= 0 && col < numCols &&
@@ -101,7 +99,7 @@ void qLearning() {
   for (int episode = 0; episode < numEpisodes; episode++) {
     int currentRow = startRow;
     int currentCol = startCol;
-    std::cout << "Episode: " << episode << std::endl;
+    //std::cout << "Episode: " << episode << std::endl;
 
     int step = 0;            // Add a step counter
     int previousAction = -1; // Add this line
@@ -139,7 +137,7 @@ void qLearning() {
         chooseAction(currentRow, currentCol, qValues, previousAction1);
 
     if (bestAction == -1) { // No valid actions available
-      std::cout << "ERROR!" << std::endl;
+      std::cout << "There is no valid path!" << std::endl;
       return; // Exit the function
     }
 
@@ -163,6 +161,14 @@ void qLearning() {
 }
 
 int main() {
+  freopen("/media/zby/SSD数据盘/Program-Practice/Maze/build/maze.txt", "r", stdin);
+  std::cin >> numRows >> numCols;
+  maze.resize(numRows, std::vector<int>(numCols));
+  for (int i = 0; i < numRows; i++) {
+    for (int j = 0; j < numCols; j++) {
+      std::cin >> maze[i][j];
+    }
+  }
   qLearning();
   return 0;
 }

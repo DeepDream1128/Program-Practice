@@ -48,19 +48,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/zby/codetest/tmp/cmake-3.26.3-linux-x86_64/bin/cmake
+CMAKE_COMMAND = /media/zby/SSD数据盘/miniconda3/envs/myenv/lib/python3.8/site-packages/cmake/data/bin/cmake
 
 # The command to remove a file.
-RM = /home/zby/codetest/tmp/cmake-3.26.3-linux-x86_64/bin/cmake -E rm -f
+RM = /media/zby/SSD数据盘/miniconda3/envs/myenv/lib/python3.8/site-packages/cmake/data/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zby/codetest/ProPractice/Maze
+CMAKE_SOURCE_DIR = /media/zby/SSD数据盘/Program-Practice/Maze
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zby/codetest/ProPractice/Maze/build
+CMAKE_BINARY_DIR = /media/zby/SSD数据盘/Program-Practice/Maze/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/zby/codetest/ProPractice/Maze/build
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	/home/zby/codetest/tmp/cmake-3.26.3-linux-x86_64/bin/cpack --config ./CPackConfig.cmake
+	/media/zby/SSD数据盘/miniconda3/envs/myenv/lib/python3.8/site-packages/cmake/data/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -78,7 +78,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	/home/zby/codetest/tmp/cmake-3.26.3-linux-x86_64/bin/cpack --config ./CPackSourceConfig.cmake /home/zby/codetest/ProPractice/Maze/build/CPackSourceConfig.cmake
+	/media/zby/SSD数据盘/miniconda3/envs/myenv/lib/python3.8/site-packages/cmake/data/bin/cpack --config ./CPackSourceConfig.cmake /media/zby/SSD数据盘/Program-Practice/Maze/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -88,7 +88,7 @@ package_source/fast: package_source
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/home/zby/codetest/tmp/cmake-3.26.3-linux-x86_64/bin/ctest --force-new-ctest-process $(ARGS)
+	/media/zby/SSD数据盘/miniconda3/envs/myenv/lib/python3.8/site-packages/cmake/data/bin/ctest --force-new-ctest-process $(ARGS)
 .PHONY : test
 
 # Special rule for the target test
@@ -97,8 +97,8 @@ test/fast: test
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/home/zby/codetest/tmp/cmake-3.26.3-linux-x86_64/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/media/zby/SSD数据盘/miniconda3/envs/myenv/lib/python3.8/site-packages/cmake/data/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -108,7 +108,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/zby/codetest/tmp/cmake-3.26.3-linux-x86_64/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/media/zby/SSD数据盘/miniconda3/envs/myenv/lib/python3.8/site-packages/cmake/data/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -117,9 +117,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zby/codetest/ProPractice/Maze/build/CMakeFiles /home/zby/codetest/ProPractice/Maze/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /media/zby/SSD数据盘/Program-Practice/Maze/build/CMakeFiles /media/zby/SSD数据盘/Program-Practice/Maze/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zby/codetest/ProPractice/Maze/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /media/zby/SSD数据盘/Program-Practice/Maze/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

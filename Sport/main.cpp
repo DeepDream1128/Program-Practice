@@ -6,36 +6,45 @@
 
 using namespace std;
 
+//定义学校结构体，包含学校的信息和比赛得分
 struct School {
-    int id;
-    string name;
-    int total_score = 0;
-    int male_score = 0;
-    int female_score = 0;
-    map<int, int> event_scores;
+    int id;  // 学校ID
+    string name;  // 学校名字
+    int total_score = 0;  // 学校总得分
+    int male_score = 0;  // 男子团体总得分
+    int female_score = 0;  // 女子团体总得分
+    map<int, int> event_scores;  // 按项目编号存储每个项目的得分
 };
 
+//定义比赛项目结构体，包含项目的信息和每个学校在该项目中的得分
 struct Event {
-    int id;
-    string name;
-    int num_rankings; // 新增：用户指定的名次取法
-    vector<pair<int, int>> school_scores;
+    int id;  // 项目ID
+    string name;  // 项目名字
+    string gender;  // 项目性别分类，m表示男子项目，w表示女子项目
+    int num_rankings;  // 用户指定的名次取法，例如前三名或前五名
+    vector<pair<int, int>> school_scores;  // 每个学校在该项目中的得分，
+                                           //pair中第一个元素为学校ID，
+                                           //第二个元素为该学校在该项目中的得分
 };
 
+//比较函数，用于按照学校ID排序
 bool compare_by_id(const School& a, const School& b) {
     return a.id < b.id;
 }
 
+//比较函数，用于按照学校总得分排序
 bool compare_by_total_score(const School& a, const School& b) {
     return a.total_score > b.total_score;
 }
 
+//比较函数，用于按照男女团体总得分排序
 bool compare_by_male_female_score(const School& a, const School& b) {
     if (a.male_score != b.male_score) {
         return a.male_score > b.male_score;
     }
     return a.female_score > b.female_score;
 }
+
 
 int main() {
     int n, m, w;
@@ -47,11 +56,13 @@ int main() {
         schools[i].id = i + 1;
         cin >> schools[i].name;
     }
-    cout << "请输入项目名称和名次取法：" << endl; // 输入部分，让用户指定每个项目的名次取法
+    cout << "请输入项目名称, 参与性别及名次取法：" << endl; // 让用户指定每个项目的名次取法
     vector<Event> events(m + w);
     for (int i = 0; i < m + w; ++i) {
         events[i].id = i + 1;
-        cin >> events[i].name >> events[i].num_rankings; // 获取用户指定的名次取法
+        // 获取用户指定的名次取法
+        cin >> events[i].name >> events[i].gender 
+            >>events[i].num_rankings; 
     }
 
     for (auto& event : events) {
@@ -63,10 +74,11 @@ int main() {
 
             School& school = schools[school_id - 1];
             school.total_score += score;
-            if (i < m) {
+            if (event.gender=="m") {
                 school.male_score += score;
             } else {
                 school.female_score += score;
+                cout<< school.female_score<<endl;
             }
             school.event_scores[event.id] = score;
         }
@@ -121,4 +133,3 @@ int main() {
 
     return 0;
 }
-

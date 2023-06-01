@@ -1,8 +1,8 @@
 [
 {
-  "directory": "/home/zby/codetest/ProPractice/Sport/build",
-  "command": "/usr/bin/g++   -g -o CMakeFiles/Sport.dir/main.cpp.o -c /home/zby/codetest/ProPractice/Sport/main.cpp",
-  "file": "/home/zby/codetest/ProPractice/Sport/main.cpp",
+  "directory": "/media/zby/SSD数据盘/Program-Practice/Sport/build",
+  "command": "/usr/bin/g++ -g -o CMakeFiles/Sport.dir/main.cpp.o -c /media/zby/SSD数据盘/Program-Practice/Sport/main.cpp",
+  "file": "/media/zby/SSD数据盘/Program-Practice/Sport/main.cpp",
   "output": "CMakeFiles/Sport.dir/main.cpp.o"
 }
 ]
