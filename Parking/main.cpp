@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define NUM 20
+#define NUM 1
 typedef struct {
   int hour;
   int min;
@@ -67,7 +67,8 @@ int main(void) {
           break;
       printf("\n\t\t 请输入到达/离开时间(形如2:00):");
       scanf("%d:%d", &c[j].t.hour, &c[j].t.min);
-      CarOut(&S, &S0, &c[j], &Q); // 车辆的情况break;
+      CarOut(&S, &S0, &c[j], &Q); // 车辆的情况
+      break;
     case 3:
       flag = 1;
       break;
@@ -140,7 +141,7 @@ int DeleteQueue(LinkQueue *Q, Car *x) {
 }
 void CarIn(Stack *S, LinkQueue *Q, Car *r) {
   if (IsFull(S)) {
-    printf("停车场已满，请在便道中等待");
+    printf("停车场已满，请在便道中等待\n");
     EnterQueue(Q, r); // 车进入便道
   } else {
     Push(S, r);

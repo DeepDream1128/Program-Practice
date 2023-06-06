@@ -1,7 +1,7 @@
 [
 {
   "directory": "/media/zby/SSD数据盘/Program-Practice/Parking/build",
-  "command": "/usr/bin/g++ -O3 -DNDEBUG -o CMakeFiles/Parking.dir/main.cpp.o -c /media/zby/SSD数据盘/Program-Practice/Parking/main.cpp",
+  "command": "/usr/bin/c++ -O3 -DNDEBUG -o CMakeFiles/Parking.dir/main.cpp.o -c /media/zby/SSD数据盘/Program-Practice/Parking/main.cpp",
   "file": "/media/zby/SSD数据盘/Program-Practice/Parking/main.cpp",
   "output": "CMakeFiles/Parking.dir/main.cpp.o"
 }
